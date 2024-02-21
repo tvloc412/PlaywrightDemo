@@ -2,7 +2,6 @@ import { test } from "@playwright/test";
 import PageBase from "../pages/PageBase";
 import PageProducts from "../pages/PageProducts";
 import PageCheckout from "../pages/PageCheckout";
-import { describe } from "node:test";
 
 test.beforeEach(({ page }) => {
     page.addInitScript(() => {
@@ -25,7 +24,7 @@ test("has title", async ({ page }) => {
     await base.setProductSearch(productName);
     await base.clickButtonSearch();
 
-    await product.verifySearchResultHeader(`Products for "${productName}"`);
+    await product.verifySearchResultHeader(`Products fo "${productName}"`);
 
     await product.clickAddProducToCart("Coconut Milk 13.5 Ounce Size - 12 Per Case.");
     await product.clickAddProducToCart("Thai Kitchen Coconut Milk 6 Pound Each - 6 Per Case.");
