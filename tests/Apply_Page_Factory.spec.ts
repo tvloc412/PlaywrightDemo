@@ -9,7 +9,7 @@ test.describe("Test suite", () => {
         await utils.preventPopup(page);
     });
 
-    test.only("Test 1", async ({ page }) => {
+    test("Test 1", async ({ page }) => {
         const pages = await new Pages(page);
         const productName = "coconut milk";
         const productToAddToCart1 = "Lite Coconut Milk 13.5 Ounce Size - 12 Per Case.";
