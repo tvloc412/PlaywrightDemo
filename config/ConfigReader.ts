@@ -18,7 +18,7 @@ export class ConfigReader {
         return env;
     }
 
-    static get APP_URL(): string {
+    static get BASE_URL(): string {
         return ConfigReader.getEnvVars().BASE_URL;
     }
 

@@ -2,8 +2,6 @@ name: Playwright-Test-Demo
 on:
   workflow_dispatch:
     inputs:
-      baseURL:
-        description: The baseURL for test run. If not set, it get the URL from environment file.
       environment:
         type: choice
         description: The environment to run test.
@@ -11,6 +9,8 @@ on:
           - QA
           - STAGING
         default: QA
+      baseURL:
+        description: If set, replace BASE_URL from the selected environment.
       workers:
         description: Number of workers to run test in parrallel.
         default: 1
