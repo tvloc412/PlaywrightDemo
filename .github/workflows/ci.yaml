@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       baseURL:
-        description: Only set if run test on Vercel URL.
+        description: The baseURL for test run. If not set, it get the URL from environment file.
       environment:
         type: choice
         description: The environment to run test.
