@@ -2,6 +2,8 @@ name: Playwright-Test-Demo
 on:
   workflow_dispatch:
     inputs:
+      baseURL:
+        description: Only set if run test on Vercel URL.
       environment:
         type: choice
         description: The environment to run test.
@@ -9,8 +11,6 @@ on:
           - QA
           - STAGING
         default: QA
-      baseURL:
-        description: Only set if run tests on Vercel deployment.
       workers:
         description: Number of workers to run test in parrallel.
         default: 1
