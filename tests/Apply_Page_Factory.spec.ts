@@ -17,7 +17,7 @@ test.describe("Test suite", () => {
 
         await pages.base.visitHomePage();
         await pages.base.searchForProduct(productName);
-        await pages.products.verifySearchResultHeader(`Products for "${productName}"`);
+        await pages.products.verifySearchResultHeader(`Products fo "${productName}"`);
 
         await pages.products.clickAddProducToCart(productToAddToCart1);
         await pages.products.clickAddProducToCart(productToAddToCart2);
