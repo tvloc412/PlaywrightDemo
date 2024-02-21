@@ -9,6 +9,8 @@ on:
           - QA
           - STAGING
         default: QA
+      baseURL:
+        description: Only set if run tests on Vercel deployment.
       workers:
         description: Number of workers to run test in parrallel.
         default: 1
@@ -26,7 +28,7 @@ jobs:
                npm install
                npx playwright install
         - name: Test
-          run: env='${{ github.event.inputs.environment }}' npx playwright test --workers='${{ github.event.inputs.workers }}'
+          run: baseURL='${{github.event.inputs.baseURL}}' env='${{github.event.inputs.environment}}' npx playwright test --workers='${{github.event.inputs.workers}}'
         - name: Upload artifact
           uses: actions/upload-artifact@v2
           if: failure()
