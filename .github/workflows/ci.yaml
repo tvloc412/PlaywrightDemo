@@ -3,8 +3,15 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'QA or DEV'
-        default: 'QA'
+        type: choice
+        description: Choose the environment that you want to run the test
+        options:
+          - QA
+          - DEV
+        default: QA
+      workers:
+        description: Number of workers to run test in parrallel. Set 1 if you want to run test sequentially.
+        default: 1
 jobs:
   build:
     runs-on: ubuntu-latest
