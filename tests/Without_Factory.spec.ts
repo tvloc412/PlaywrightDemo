@@ -12,7 +12,7 @@ test.beforeEach(({ page }) => {
     });
 });
 
-test("has title", async ({ page }) => {
+test("Basic test case", async ({ page }) => {
     const base = new PageBase(page);
     const product = new PageProducts(page);
     const checkout = new PageCheckout(page);
