@@ -1,9 +1,8 @@
 import { test } from "../fixtures/TestExtensions";
 
 test.describe("Test suite apply page object factory and fixtures", () => {
-    test.beforeEach(async ({ utils, pages }) => {
+    test.beforeEach(async ({ utils }) => {
         await utils.preventPopup();
-        await pages.base.visitHomePage();
     });
 
     test("Test 1", async ({ pages }) => {
