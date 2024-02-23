@@ -29,9 +29,3 @@ jobs:
                npx playwright install
         - name: Test
           run: baseURL='${{github.event.inputs.baseURL}}' env='${{github.event.inputs.environment}}' npx playwright test --workers='${{github.event.inputs.workers}}'
-        - name: Upload artifact
-          uses: actions/upload-artifact@v2
-          if: failure()
-          with:
-            name: logs
-            path: playwright-report
